@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --text-size: 26px;
+    --container-gap: 15px;
+    --title-size: 80px;
+}
+
 html {
     font-size: 16px;
 }
@@ -25,6 +31,17 @@ a {
     &:hover {
         text-decoration: none;
     }
+}
+
+.container {
+    max-width: calc(1380 + var(--container-gap) * 2);
+    width: 100%;
+    padding: 0 var(--container-gap);
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
 }
 
 .wrapper {

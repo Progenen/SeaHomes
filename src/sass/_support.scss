@@ -39,28 +39,9 @@
 	}
 }
 
-// Перевод из px в rem
-@function rem($size) {
-	@return calc($size / $fontSize) + rem;
-}
-
-// Перевод из px в vw
-@function vw($size) {
-	@return calc($size / $vw) + vw;
-}
-
-// Переменнные | _support
-$fontSize: 16;
-$vw: 1920;
-
-// Переменные | Глобальные
-$color1: #ff0000;
-
 
 // Fonts
 // @include font-face('Example', '../fonts/Example/Example-Bold', 700, normal, ttf);
-
-// Vars
 
 // Путь к спрайту для конкатенации
 $sprite: "../svg/dest/stack/sprite.svg#";
