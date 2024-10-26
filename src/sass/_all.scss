@@ -42,6 +42,7 @@ a {
 
 .row {
     display: flex;
+    width: 100%;
 }
 
 .wrapper {
@@ -69,6 +70,8 @@ section {
     margin-bottom: 50px;
     line-height: 101%;
     margin-top: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .main-descr {
@@ -113,5 +116,31 @@ section {
     &--alt {
         background-color: #fff;
         color: #000;
+    }
+}
+
+@keyframes tabShow {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        display: flex;
+    }
+}
+
+@keyframes tabContentShow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

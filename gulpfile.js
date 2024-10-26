@@ -92,11 +92,9 @@ function startWatch() {
     watch(['src/**/*.html'], html);
     watch(['src/**/*.html']).on('change', browserSync.reload);
     watch(['src/images/**/*'], images);
-    watch(['src/svg/src/mono/*'], svgspriteMono);
-    watch(['src/svg/src/multi/*'], svgspriteMulti);
+    watch(['src/svg/stack/mono/*'], svgspriteMono);
+    watch(['src/svg/stack/multi/*'], svgspriteMulti);
     watch(['src/fonts/**/*'], fonts);
-    watch(['src/svg/src/mono/*'], svgspriteMono);
-    watch(['src/svg/src/multi/*'], svgspriteMulti);
 }
 
 
