@@ -1,3 +1,5 @@
+@use "sass:list";
+
 // Быстрое подключение шрифтов
 @function str-replace($string, $search, $replace: "") {
 	$index: str-index($string, $search);
@@ -11,7 +13,7 @@
 }
 
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
-	$src: null;
+	$src: ();
 
 	$extmods: (
 		eot: "?",
@@ -26,11 +28,11 @@
 	@each $ext in $exts {
 		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
 		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+		$src: list.append($src, url("#{$path}.#{$extmod}") format("#{$format}"), $separator: comma);
 	}
 
 	@font-face {
-		font-family: quote($name);
+		font-family: #{$name};
 		font-weight: $weight;
 		font-style: $style;
 

@@ -15,7 +15,7 @@
   \*************************/
 /***/ (() => {
 
-eval("document.addEventListener('DOMContentLoaded', function () {\n    // const burger = document.querySelector(\".header__burger\");\n    // const menu = document.querySelector(\".header__col--menu\");\n    // const header = document.querySelector(\"header\");\n\n    // burger.addEventListener(\"click\", () => {\n    //     burger.classList.toggle(\"active\");\n    //     menu.classList.toggle(\"active\");\n    //     document.body.classList.toggle(\"lock\");\n    // });\n});\n\n//# sourceURL=webpack://project-name/./src/js/index.js?");
+eval("document.addEventListener('DOMContentLoaded', function () {\n    const burger = document.querySelector(\".header__burger\");\n    const menu = document.querySelector(\".header__menu\");\n    const mobMenu = document.querySelector(\".mobmenu\");\n    const headerPhone = document.querySelector(\".header__contacts-item--phone\")\n    const header = document.querySelector(\"header\");\n\n    if (window.innerWidth <= 992) {\n        mobMenu.append(menu);\n        mobMenu.style.paddingTop = header.getBoundingClientRect().height + \"px\";\n        burger.addEventListener(\"click\", () => {\n            burger.classList.toggle(\"active\");\n            mobMenu.classList.toggle(\"active\");\n            document.body.classList.toggle(\"lock\");\n        });\n    }\n\n    if (window.innerWidth <= 768) {\n        mobMenu.append(headerPhone);\n    }\n});\n\n//# sourceURL=webpack://project-name/./src/js/index.js?");
 
 /***/ })
 

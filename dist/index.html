@@ -31,13 +31,13 @@
                         </div>
                         <div class="header__col header__col--ui">
                             <div class="header__contacts">
-                                <a href="#" class="header__contacts-item">
+                                <a href="#" class="header__contacts-item header__contacts-item--insta">
                                     <img class="header__contacts-icon" src="images/icons/insta.webp" alt="">
                                     <span class="header__contacts-text">
                                         @dom_u_morya
                                     </span>
                                 </a>
-                                <a href="#" class="header__contacts-item">
+                                <a href="#" class="header__contacts-item header__contacts-item--phone">
                                     <img class="header__contacts-icon" src="images/icons/phone.webp" alt="">
                                     <span class="header__contacts-text">
                                         92-05-02
@@ -45,10 +45,87 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="header__col header__col--burger">
+                            <button class="header__burger">
+                                <span></span><span></span><span></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </header>
 <main>
+    <section class="offer">
+        <div class="container">
+            <form action="#" class="offer__form">
+                <div class="offer__form-input offer__form-col input">
+                    <label for="">Ваше имя</label>
+                    <input type="text" name="name" placeholder="Введите">
+                </div>
+                <div class="offer__form-input offer__form-col input">
+                    <label for="">Номер телефона</label>
+                    <input type="tel" name="phone" placeholder="+7___-___-__-__">
+                </div>
+                <div class="offer__form-input offer__form-col input">
+                    <label for="">Дата заезда</label>
+                    <input type="text" name="dateDeparture" placeholder="__.__">
+                </div>
+                <div class="offer__form-input offer__form-col input">
+                    <label for="">Дата выезда</label>
+                    <input type="text" name="dateArrival" placeholder="__.__">
+                </div>
+                <div class="offer__form-right offer__form-col">
+                    <span class="offer__form-alert">*Заполните все окна</span>
+                    <button class="offer__form-btn btn btn--alt" type="submit">Записаться</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="comfort">
+        <div class="container">
+            <div class="row">
+                <div class="comfort__col comfort__col--left">
+                    <span class="comfort__pretitle main-descr">
+                        “Дома у моря” это
+                    </span>
+                    <div class="comfort__main-text">
+                        <h2 class="comfort__title main-title">
+                            Простор <br/>
+                            и комфорт
+                        </h2>
+                        <p class="comfort__descr main-descr">
+                            Дом расположен в живописном месте, откуда открывается захватывающий вид на море
+                        </p>
+                    </div>
+                    <button class="comfort__btn btn">
+                        Забронировать
+                    </button>
+                </div>
+                <div class="comfort__col comfort__col--right">
+                    <div class="comfort__photos">
+                        <img src="images/content/comfort/comfort-photo1.webp" alt="">
+                        <img src="images/content/comfort/comfort-photo2.webp" alt="">
+                        <img src="images/content/comfort/comfort-photo3.webp" alt="">
+                        <img src="images/content/comfort/comfort-photo4.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="dominates">
+        <div class="container">
+            <div class="dominates__top row">
+                <span class="dominates__posttile">
+                    Дома у моря
+                </span>
+                <h2 class="dominates__title main-title">
+                    Наши преимущества
+                </h2>
+                <span class="dominates__posttile">
+                    Дома у моря
+                </span>
+            </div>
+        </div>
+    </section>
 </main>
 </div>
 <footer class="footer">
@@ -57,6 +134,7 @@
 </div>
 
 <script src="JS/bundle.js"></script>
+<div class="mobmenu"></div>
 </body>
 
 </html>

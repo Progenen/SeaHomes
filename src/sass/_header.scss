@@ -1,0 +1,86 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 100px;
+
+    .row {
+        justify-content: space-between;
+    }
+
+    &__col {
+
+        &--logo {
+        }
+
+        &--menu {
+            margin-top: 23px;
+        }
+
+        &--ui {
+            margin-top: 23px;
+        }
+
+        &--burger {
+            display: none;
+        }
+    }
+
+    &__logo {
+        display: block;
+        max-width: 280px;
+        width: 100%;
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__menu {
+    }
+
+    &__menu ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        gap: 43px;
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: .3s;
+            &:hover {
+                color: #8E8E8E;
+
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        gap: 45px;
+    }
+
+    &__contacts-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        transition: .3s;
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    &__contacts-icon {
+    }
+
+    &__contacts-text {
+        color: #fff;
+    }
+
+    &__burger {
+    }
+}
