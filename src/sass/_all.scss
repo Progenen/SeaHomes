@@ -144,3 +144,140 @@ section {
         transform: translateX(0);
     }
 }
+
+.modal-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+    background: rgba(0,0,0, .6);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10000;
+    overflow: auto;
+    display: flex;
+    backdrop-filter: blur(6px);
+    justify-content: center;
+}
+.modal-wrapper.min-modal-js-active {
+    visibility: visible;
+    transition: .3s;
+    opacity: 1;
+}
+.lock {
+    overflow: hidden;
+}
+
+.modal-call {
+    position: relative;
+    margin-top: 20vh;
+    &__close {
+        position: absolute;
+        right: 0;
+        display: none;
+        top: 0;
+    }
+
+    &__content {
+        margin-top: 0;
+        background-color: #fff;
+        max-width: 1092px;
+        width: 100%;
+        border-radius: 30px;
+        overflow: auto;
+    }
+
+    &__content-header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #009EE3;
+        border-radius: 0 0 50px 50px;
+        color: #fff;
+        padding: 50px;
+    }
+
+    &__content-header-left {
+        
+    }
+
+    &__title {
+        font-size: 75px;
+        font-family: Manrope;
+        font-weight: 600;
+        max-width: 405px;
+        line-height: 104%;
+        margin: 0 0 45px 0;
+    }
+
+    &__descr {
+        margin: 0;
+    }
+
+    &__logo {
+        max-width: 224px;
+        width: 100%;
+        display: block;
+    }
+
+    &__content-header-right {
+    }
+
+    &__body {
+        padding: 50px;
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    &__form-input {
+
+        width: 21.976%;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    &__form-col {
+
+        &--autosize {
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color:#009EE3;
+        font-size: 31px;
+    }
+
+    &__contacts-text {
+    }
+
+    &__form-alert {
+        display: block;
+        font-size: 19px;
+        opacity: .2;
+        max-width: 202px;
+    }
+
+    &__form-right {
+        width: 24%;
+    }
+
+    &__form-btn {
+        background-color: #000;
+        color: #fff;
+        display: block;
+        max-width: 251px;
+        width: 100%;
+    }
+}

@@ -43,6 +43,13 @@
             width: 30%;
         }
     }
+
+    // rest 1440
+    .rest {
+        &__btn {
+            margin-top: 130px;
+        }
+    }
 }
 
 @media (max-width:1220px){
@@ -106,6 +113,87 @@
 
         &__item-value {
             font-size: 40px;
+        }
+    }
+
+    // contacts 1220
+    .contacts {
+        padding: 120px 0;
+
+        &__map-search {
+            display: none;
+        }
+    }
+
+    // rest 1220
+    .rest {
+        &__col--left {
+            width: 40%;
+            padding-top: 60px;
+        }
+
+        &__btn {
+            margin-top: 100px;
+        }
+    }
+
+    // footer 1220
+    .footer {
+        &__top {
+            padding-bottom: 50px;
+        }
+
+        &__bottom {
+            padding-top: 50px;
+        }
+
+        &__menu-link {
+            font-size: 22px;
+        }
+
+        &__phone-text {
+            font-size: 22px;
+            max-width: 450px;
+        }
+
+        &__phone-link {
+            font-size: 60px;
+        }
+
+        &__anchor-text {
+            font-size: 22px;
+        }
+    }
+
+    // modal-call 1220
+    .modal-call {
+        margin-top: 0;
+        &__content {
+            margin-top: 0;
+        }
+
+        &__title {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        &__form {
+            column-gap: 30px;
+            row-gap: 20px;
+        }
+
+        &__form-col {
+            width: 47.8%;
+
+        }
+
+        &__form-alert {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+
+        &__form-right {
+            width: 100%;
         }
     }
 
@@ -365,6 +453,123 @@
         }
     }
 
+    // gallery 992
+    .gallery {
+        &__items {
+            margin-top: 50px;
+            gap: 10px;
+        }
+    }
+
+    // contacts 992
+    .contacts {
+        padding: 120px 0 !important;
+        &__phone {
+            display: none;
+        }
+
+        &__title {
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        &__col {
+            padding: 0;
+            width: 100%;
+        }
+
+        &__map {
+            position: relative;
+            max-width: 740px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 60%;
+            width: 103%;
+            &::before {
+                display: none;
+            }
+
+            iframe {
+                position: absolute !important;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &__routes {
+            margin-top: 5%;
+        }
+
+        &__routes-label {
+            font-size: 36px;
+        }
+
+        &__routes-item a {
+            width: 120px;
+            height: 120px;
+            img {
+                display: block;
+            }
+        }
+    }
+
+    // rest 992
+    .rest {
+
+        .row  {
+            flex-direction: column-reverse;
+        }
+
+        &__col {
+            width: 100%;
+
+            &--right {
+                img {
+                    width: 100%;
+                    height: 320px;
+                    object-fit: cover;
+                    object-position: top center;
+                }
+            }
+        }
+
+        &__btn {
+            margin-top: 50px;
+        }
+    }
+
+    // footer 992
+    .footer {
+        &__menu {
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 40px;
+            row-gap: 20px
+        }
+    }
+
+    // modal-call 992
+    .modal-call {
+
+        &__content {
+            border-radius: 20px;
+        }
+
+        &__content-header {
+            padding: 20px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        &__body {
+            padding: 20px;
+        }
+
+        &__form-col--contact {
+            display: none;
+        }
+    }
+
 }
 
 @media (max-width:876px){
@@ -509,6 +714,103 @@
     // services 768
     .services {
     }
+
+    // contacts 768
+    .contacts {
+        padding: 50px 0 !important;
+        &__routes-label {
+            font-size: 28px;
+        }
+
+        &__routes-items {
+            margin-top: 15px;
+            gap: 15px;
+            flex-wrap: wrap ;
+        }
+
+        &__routes-item a {
+            width: 80px;
+            height: 80px;
+
+            img {
+                display: block;
+                width: 56%;
+                height: auto;
+            }
+        }
+    }
+
+    // rest 768
+    .rest {
+        &__col--left {
+            padding-top: 20px;
+        }
+
+        &__btn {
+            margin-top: 20px;
+        }
+    }
+
+    // footer 768
+    .footer {
+        padding: 50px 0;
+        &__menu {
+            flex-direction: column;
+        }
+
+        &__bottom-col {
+            &--phone {
+                flex-direction: column;
+                align-items:flex-start;
+            }
+        }
+
+        &__menu-link {
+            font-size: 20px;
+        }
+
+        &__phone-text {
+            font-size: 20px;
+        }
+
+        &__phone-link {
+            margin-top: 20px;
+            font-size: 36px;
+        }
+
+        &__anchor-text {
+            font-size: 20px;
+        }
+
+        &__socials-link {
+            width: 25px;
+        }
+    }
+
+    // modal-call 768
+    .modal-call {
+        display: block;
+        margin-top: 10vh;
+        &__content {
+            margin-top: auto;
+        }
+        
+        &__form {
+            justify-content: space-between;
+        }
+        &__form-col {
+            width: 45%;
+        }
+
+        &__form-btn {
+            max-width: 100%;
+        }
+
+        &__form-alert {
+            font-size: 16px;
+        }
+    }
+
 }
 
 @media (max-width:576px){
@@ -582,6 +884,32 @@
 
         &__tabs-content-descr {
             margin-bottom: 30px;
+        }
+    }
+
+    // contacts 768
+    .contacts {
+        &__map {
+            height: 320px;
+        }
+    }
+
+    // modal-call
+    .modal-call {
+        &__form-col {
+            width: 100%;
+        }
+
+        &__title {
+            font-size: 30px;
+        }
+
+        &__logo {
+            max-width: 150px;
+        }
+
+        &__form-alert {
+            margin-top: 0;
         }
     }
 

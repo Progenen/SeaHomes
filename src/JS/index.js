@@ -1,3 +1,74 @@
+class MinModalJS {
+
+    modalOpen () {
+        this.modal.classList.add('min-modal-js-active');
+        document.querySelector("html").classList.add('lock');
+    }
+
+    modalClose () {
+        this.modal.classList.remove('min-modal-js-active');
+        document.querySelector("html").classList.remove('lock');
+    }
+
+    modalDestroy() {
+        this.modal.remove();
+    }
+
+    constructor(inner, obj) {
+        if (obj.keyOpen === undefined) {
+            obj.keyOpen = 'Escape';
+        }
+
+        this.btns = document.querySelectorAll(obj.buttonsActive);
+        this.inner = document.querySelector(inner);
+        this.closeBtns = document.querySelectorAll(obj.buttonsDisActive);
+        this.keyOpen = obj.keyOpen;
+        this.modalOutsideClick = obj.modalOutsideClick;
+        this.modal = document.createElement('div');
+        this.modal.classList.add('modal-wrapper');
+
+        let modalOpen = () => {
+            this.modalOpen();
+        };
+        let modalClose = () => {
+            this.modalClose();
+        };
+
+        this.modal.append(this.inner);
+        document.body.append(this.modal);
+        
+        this.btns.forEach(element => {
+            element.addEventListener('click', (e) =>{
+                e.preventDefault();
+                modalOpen();
+            });
+        });
+
+        this.closeBtns.forEach(element => {
+            element.addEventListener('click', (e) =>{
+                e.preventDefault();
+                modalClose();
+            });
+        });
+
+        if (this.modalOutsideClick != false) {
+            this.modal.addEventListener('click', (e) => {
+                if (e.target === this.modal) {
+                    modalClose();
+                }
+            });
+        }
+
+        if (this.key != false) {
+            document.addEventListener('keydown', (e)=> {
+                if (e.key === this.keyOpen) { 
+                    modalClose();
+                }
+            });
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const burger = document.querySelector(".header__burger");
     const menu = document.querySelector(".header__menu");
@@ -5,6 +76,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const headerPhone = document.querySelector(".header__contacts-item--phone")
     const header = document.querySelector("header");
     const dataTabParent = document.querySelectorAll("[data-tab-parent]");
+    const contactsMapAdapt = document.querySelector(".contacts__map-adapt");
+    const contactsMap = document.querySelector(".contacts__map");
+    const callModal = new MinModalJS('.modal-call', {
+        buttonsActive: ".modal-call-open",
+        buttonsDisActive: '.modal-call-close',
+        modalOutsideClick: true,
+    });
+
+    callModal.modalOpen();
 
     dataTabParent.forEach((el, i) => {
         const dataTabTitles = el.querySelectorAll("[data-tab-title]");
@@ -38,6 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
             mobMenu.classList.toggle("active");
             document.body.classList.toggle("lock");
         });
+
+        contactsMapAdapt.append(contactsMap);
     }
 
     if (window.innerWidth <= 768) {
