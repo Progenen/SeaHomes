@@ -811,6 +811,25 @@
         }
     }
 
+    // thanks-modal 768
+    .modal-thanks {
+        margin-top: 40px;
+        max-width: 420px;
+
+        &__content {
+            padding: 80px 30px;
+        }
+
+        &__title {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        &__descr {
+            font-size: 24px;
+        }
+    }
+
 }
 
 @media (max-width:576px){

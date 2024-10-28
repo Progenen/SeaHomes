@@ -66,7 +66,7 @@
             </div>
             <div class="modal-call__content-header-right">
                 <img class="modal-call__logo" src="images/logo.svg" alt="">
-            </div> 
+            </div>
         </div>
         <div class="modal-call__body">
             <form action="#" class="modal-call__form">
@@ -78,11 +78,11 @@
                     <label for="">Номер телефона</label>
                     <input type="tel" name="phone" placeholder="+7___-___-__-__">
                 </div>
-                <div class="modal-call__form-input modal-call__form-col input">
+                <div class="modal-call__form-input modal-call__form-col input input--date">
                     <label for="">Дата заезда</label>
                     <input type="text" name="dateDeparture" placeholder="__.__">
                 </div>
-                <div class="modal-call__form-input modal-call__form-col input">
+                <div class="modal-call__form-input modal-call__form-col input input--date">
                     <label for="">Дата выезда</label>
                     <input type="text" name="dateArrival" placeholder="__.__">
                 </div>
@@ -112,6 +112,22 @@
 
             </form>
         </div>
+    </div>
+</div>
+<div class="modal-thanks modal-thanks--selector">
+    <div class="modal-thanks__content">
+        <h2 class="modal-thanks__title">Отлично!</h2>
+        <p class="modal-thanks__descr">
+            С вами свяжется наш представитель (оператор)
+        </p>
+    </div>
+</div>
+<div class="modal-thanks modal-error">
+    <div class="modal-thanks__content">
+        <h2 class="modal-thanks__title">Ошибка</h2>
+        <p class="modal-thanks__descr">
+            Что-то пошло не так. Попробуйте позже...
+        </p>
     </div>
 </div>
 <script src="JS/bundle.js"></script>

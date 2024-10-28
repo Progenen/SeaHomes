@@ -97,6 +97,13 @@ section {
             outline: none;
         }
     }
+
+    &--date input {
+        background-image: url('../images/icons/calendar.webp');
+        background-size: 18px 18px;
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+    }
 }
 
 .btn {
@@ -171,8 +178,9 @@ section {
 }
 
 .modal-call {
+    height: fit-content;
     position: relative;
-    margin-top: 20vh;
+    margin-top: 120px;
     &__close {
         position: absolute;
         right: 0;
@@ -279,5 +287,36 @@ section {
         display: block;
         max-width: 251px;
         width: 100%;
+    }
+}
+
+.modal-thanks {
+    max-width: 796px;
+    width: 100%;
+    margin-top: 120px;
+    height: fit-content;
+    &__content {
+        display: block;
+        max-width: 796px;
+        width: 100%;
+        padding: 130px 50px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 85px;
+        line-height: 106%;
+        margin:0 0 25px;
+    }
+
+    &__descr {
+        font-size: 32px;
+        line-height: 106%;
+        display: block;
+        margin: 0 auto;
+        max-width: 502px;
     }
 }

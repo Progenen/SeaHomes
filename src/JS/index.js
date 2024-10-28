@@ -1,3 +1,7 @@
+import SimpleLightbox from "simplelightbox";
+import Cleave from "cleave.js";
+import AirDatepicker from "air-datepicker";
+
 class MinModalJS {
 
     modalOpen () {
@@ -78,22 +82,43 @@ document.addEventListener('DOMContentLoaded', function () {
     const dataTabParent = document.querySelectorAll("[data-tab-parent]");
     const contactsMapAdapt = document.querySelector(".contacts__map-adapt");
     const contactsMap = document.querySelector(".contacts__map");
+    const phoneInput = document.querySelectorAll("[name='phone']")
+    const inputsDate = document.querySelectorAll("[calendar]");
+
+    new SimpleLightbox('.gallery__item a');
+
+    inputsDate.forEach(el => {
+        new AirDatepicker(el)
+    });
+
+    phoneInput.forEach(el => {
+        var cleave = new Cleave(el, {
+            prefix: '+7',
+            delimiters: [' ', '-', '-', '-'],
+            blocks: [2, 3, 3, 2, 2],
+            uppercase: true,
+        });
+    })
+
     const callModal = new MinModalJS('.modal-call', {
         buttonsActive: ".modal-call-open",
         buttonsDisActive: '.modal-call-close',
         modalOutsideClick: true,
     });
 
-    callModal.modalOpen();
+    const thanksModal = new MinModalJS(".modal-thanks--selector", {
+        modalOutsideClick: true
+    });
+
+    const errorModal = new MinModalJS(".modal-error", {
+        modalOutsideClick: true
+    })
 
     dataTabParent.forEach((el, i) => {
         const dataTabTitles = el.querySelectorAll("[data-tab-title]");
         const dataTabContents = el.querySelectorAll("[data-tab-content]");
-
-        console.log("ok!");
         
         dataTabTitles.forEach((el2, j) => {
-            console.log("ok!");
             el2.addEventListener("click", (e) => {
                 if (el.classList.contains("active") === true) {
                     el2.classList.remove("active");
@@ -125,4 +150,40 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth <= 768) {
         mobMenu.append(headerPhone);
     }
+
+    document.querySelectorAll('.form').forEach(el => {
+        const restUrl = el.getAttribute("data-rest-url");
+        const nonce = el.getAttribute("data-nonce");
+
+        el.addEventListener('submit', async function(e) {
+            e.preventDefault();
+    
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                dphone: formData.get('phone'),
+                dateDeparture: formData.get("dateDeparture"),
+                dateArrival: formData.get("dateArrival")        
+            };
+    
+            try {
+                const response = await fetch(restUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-WP-Nonce': nonce
+                    },
+                    body: JSON.stringify(data)
+                });
+    
+                if (response.ok) {
+                    thanksModal.modalOpen();
+                } else {
+                    errorModal.modalOpen();
+                }
+            } catch (error) {
+                errorModal.modalOpen();
+            }
+        });
+    })
 });
